@@ -7,7 +7,7 @@
 
 # NatureInspiredAlgorithms
 
-  From scratch implementation of nature inspired algorithms in programming language python. Based on the book from Jason Brownlee called "Clever Algorithms
+  From scratch implementation of nature-inspired algorithms in the programming language python. Based on the book by Jason Brownlee called "Clever Algorithms
 Nature-Inspired Programming Recipes"
   
 ## Progress
