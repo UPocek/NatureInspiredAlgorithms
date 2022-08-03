@@ -186,6 +186,9 @@ def scatter_search(search_space, max_iter, ref_set_size, div_set_size, max_no_im
 
 
 if __name__ == '__main__':
+
+    # f = sum(xi**2), i = {1,2...n}, -5 <= xi <= 5
+
     problem_size = 3
     search_space = [[-5, 5] for _ in range(problem_size)]
     max_iter = 100
