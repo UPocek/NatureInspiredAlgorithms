@@ -67,7 +67,7 @@ def calculate_distance_from_set(observed_element, set):
 
 
 def diversify(diverse_set, elite_num, ref_set_size):
-    sorted(diverse_set, key=lambda x: x['cost'])
+    diverse_set = sorted(diverse_set, key=lambda x: x['cost'])
 
     ref_set = []
     remainders = []
@@ -82,7 +82,7 @@ def diversify(diverse_set, elite_num, ref_set_size):
         remainder['distance'] = calculate_distance_from_set(
             remainder['vector'], ref_set)
 
-    sorted(remainders, key=lambda x: x['distance'])
+    remainders = sorted(remainders, key=lambda x: x['distance'], reverse=True)
 
     for remainder in remainders:
         if len(ref_set) >= ref_set_size:
@@ -154,7 +154,7 @@ def explore_sub_sets(search_space, ref_set, max_no_impr, step_size):
         for el in improved:
             if not any([el['vector'] == representative['vector'] for representative in ref_set]):
                 el['new'] = True
-                sorted(ref_set, key=lambda x: x['cost'])
+                ref_set = sorted(ref_set, key=lambda x: x['cost'])
                 if el['cost'] < ref_set[-1]['cost']:
                     ref_set.pop()
                     ref_set.append(el)
@@ -175,7 +175,7 @@ def scatter_search(search_space, max_iter, ref_set_size, div_set_size, max_no_im
     for _ in range(max_iter):
         was_changed = explore_sub_sets(
             search_space, ref_set, max_no_impr, step_size)
-        sorted(ref_set, key=lambda x: x['cost'])
+        ref_set = sorted(ref_set, key=lambda x: x['cost'])
         if ref_set[0]['cost'] < best['cost']:
             best = ref_set[0]
 
