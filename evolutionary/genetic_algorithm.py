@@ -37,14 +37,14 @@ def point_mutation(bitstring, mutation_rate=None):
     return mutated_child
 
 
-def crossover(parent1_bitstring, parent2_bitstring, breading_rate):
-    if random.random() > breading_rate:
+def crossover(parent1_bitstring, parent2_bitstring, crossover_rate):
+    if random.random() < 1 - crossover_rate:
         return parent1_bitstring
     boundary = 1 + random.randint(0, len(parent1_bitstring) - 2)
     return parent1_bitstring[:boundary] + parent2_bitstring[boundary:]
 
 
-def reproduce(selected, population_size, p_crossover, p_mutation):
+def reproduce(selected, p_crossover, p_mutation):
     children = []
 
     for i, first_parent in enumerate(selected):
@@ -74,7 +74,7 @@ def search(number_of_generations, bitstring_size, population_size, p_crossover, 
         for _ in range(population_size):
             selected.append(binary_tournament(population))
 
-        children = reproduce(selected, population_size,
+        children = reproduce(selected,
                              p_crossover, p_mutation)
         for i, genom in enumerate(children):
             children[i]['fitness'] = one_max(genom['bitstring'])
