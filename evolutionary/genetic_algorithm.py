@@ -67,7 +67,9 @@ def search(number_of_generations, bitstring_size, population_size, p_crossover, 
     for i, genom in enumerate(population):
         population[i]['fitness'] = one_max(genom['bitstring'])
 
-    best = sorted(population, key=lambda x: x['fitness'], reverse=True)[0]
+    population = sorted(population, key=lambda x: x['fitness'], reverse=True)
+
+    best = population[0]
 
     for _ in range(number_of_generations):
         selected = []
