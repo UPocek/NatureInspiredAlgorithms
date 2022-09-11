@@ -85,7 +85,7 @@ def to_edge_list(permutation):
     return edge_list
 
 
-def are_equvivalente(permutation1, permutation2):
+def are_equivalent(permutation1, permutation2):
     for index1, index2 in zip(permutation1, permutation2):
         if index1 != index2:
             return False
@@ -102,7 +102,7 @@ def generate_candidate(best, cities):
 def get_candidate_entry(visited_list, permutation):
     edge_list = to_edge_list(permutation)
     for el in visited_list:
-        if are_equvivalente(edge_list, el['edge_list']):
+        if are_equivalent(edge_list, el['edge_list']):
             return el
     return None
 
