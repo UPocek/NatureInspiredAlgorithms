@@ -71,9 +71,9 @@ def local_search(best, cities, max_no_impr):
 
 
 def double_bridge_move(perm):
-    pos1 = 1 + random.randint(0, len(perm) / 4)
-    pos2 = 1 + pos1 + random.randint(0, len(perm) / 4)
-    pos3 = 1 + pos2 + random.randint(0, len(perm) / 4)
+    pos1 = 1 + random.randint(0, len(perm) // 4 - 1)
+    pos2 = 1 + pos1 + random.randint(0, len(perm) // 4 - 1)
+    pos3 = 1 + pos2 + random.randint(0, len(perm) // 4 - 1)
 
     p1 = perm[0:pos1] + perm[pos3:len(perm)]
     p2 = perm[pos2:pos3] + perm[pos1:pos2]
