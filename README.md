@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://github.com/UPocek/NatureInspiredAlgorithms/blob/main/documentation/NIA.png" />
-</p>
+![NatureInspiredAlgorithms](https://github.com/UPocek/NatureInspiredAlgorithms/blob/main/documentation/NIA.png)
 
 # NatureInspiredAlgorithms
 
